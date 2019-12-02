@@ -4,7 +4,6 @@ use std::io::{prelude::*, BufReader};
 fn main() {
     let file = File::open("input.txt").expect("Something went wrong!");
     let reader = BufReader::new(file);
-
     let mut total_fuel_required = 0;
 
     for line in reader.lines() {
