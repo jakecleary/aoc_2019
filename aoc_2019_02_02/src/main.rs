@@ -45,7 +45,7 @@ impl Program {
                 OpCode::Multiply => instructions.insert(instruction_index, Instruction::create(op_code, &values[position..position + 3])),
                 _ => panic!("Unsupported op-code encountered."),
             }
-            position +=  4;
+            position += instructions[instruction_index].get_paramater_count() + 1;
             op_code = OpCode::from(values[position]);
             instruction_index += 1;
         }
